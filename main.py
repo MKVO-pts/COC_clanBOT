@@ -1,3 +1,8 @@
+
+##
+'''
+THIS FILE IS NOT FINISHED YET
+'''
 #este ficheiro e a base para o funcionamento de todo o processo
 from func import verify_main # atualiza sempre que entram membros novos
 from func import war_logs # historico de guerrasimport time as t
@@ -6,8 +11,12 @@ import datetime
 import time as t
 import json 
 import os
-FileNotFoundError
-FileExistsError
+
+
+##
+'''
+THIS FILE IS NOT FINISHED YET
+'''
 realtime = datetime.datetime.now().strftime('%X')
 while True:
     print(realtime,'      Confirmando os membros do cla')
@@ -17,6 +26,9 @@ while True:
     t.sleep(120) # espera 2 min + 80 seg iniciais 
     war_logs()
 
-
+##
+'''
+THIS FILE IS NOT FINISHED YET
+'''
 
 
