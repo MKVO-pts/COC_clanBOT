@@ -1,67 +1,6 @@
 #modulos utilizados
 from scrape import clan_full, individual, liga_atual, liga_info, guerra_logs, guerra_atual 
 import json
-#vamos ter os instantaneios e os demorados 
-'''
-memberlis:[
-          {(abertura1)
-               "tag": "#92RU8URLV",
-               "name": "Sub Ninja",
-               "role": "admin",
-               "expLevel": 178,
-               
-               "league": {(abertura2)
-                    "id": 29000016,
-                    "name": "Champion League III",
-               
-                    "iconUrls": {(abertura3)
-                         "small": "https://api-assets.clashofclans.com/leagues/72/JmmTbspV86xBigM7OP5_SjsEDPuE7oXjZC9aOy8xO3s.png",
-                         "tiny": "https://api-assets.clashofclans.com/leagues/36/JmmTbspV86xBigM7OP5_SjsEDPuE7oXjZC9aOy8xO3s.png",
-                         "medium": "https://api-assets.clashofclans.com/leagues/288/JmmTbspV86xBigM7OP5_SjsEDPuE7oXjZC9aOy8xO3s.png"
-                    }(fecho3)
-               
-               },(fecho2)
-               "trophies": 3288,
-               "versusTrophies": 3659,
-               "clanRank": 2,
-               "previousClanRank": 2,
-               "donations": 689,
-               "donationsReceived": 0
-          }(fecho1)
-
-Resumo:
-O fecho 0 é o que abre tudo e na verdade inclui toda a informacao relativa a cada membro do cla, este apenas representa um exemplo, 
-logo o fecho 0 nao se encontra representado. Depois temos o fecho 1 que inclui a informacao individual de cada membro, vai ser usada
-para criar os perfis individuais. O fecho numero dois inclui informacao relativa a liga em que o membro se encontra ("Champion League III"), 
-daqui apenas interessa o nome da liga. O fecho 3 nao 
-
-esquema do memberList
-
-memberList (abertura0)
-    abertura1(membro 1)
-        data
-        data
-        abertura2
-            data 
-            data
-            abertura3
-                data
-                data
-                fecho3
-            data
-        fecho2
-        data 
-        data
-        data
-        decho1
-    *proximo membro
-    abertura 1(novo membro)
-        data
-        data
-        ...
-
-E assim se repete
-'''
 
 total_guerras = {}
 clan_dic = clan_full()
@@ -85,11 +24,6 @@ def clan_profile():
         'descricao': clan_dic['description'],
         'tag': clan_dic['tag']
     }
-    #print('Clan profile created!')
-
-    
-
-
 
 #info de todos os membros dp cla 
 def prefil_individual(tag):
@@ -184,46 +118,3 @@ def guerras_complet():
             # passa ao proximo elemento
             x = x + 1
     return total_guerras
-
-#print(json.dumps(total_guerras, indent=2))
-'''
-Deste ficheiro aproveitamos o Individual que
-- 'guerras_complet()' -todo o historico de guerras
-- clan_profile() - info basica sobre o cla 
-- prefil_individual(tag) -info promenorizada sobre cada membro do cla 
-'''
-#for key, value in individual("#8Q0L2YGQ").items():
-'''
-
-ISTO E O INTRESSANTE QUE SE CONSEGUE OBTER ATRAVEZ DA ANALISE DAS ACHIVEMENTS:
-#Total de obstaculos rmovidos  {3
-#Ouro total roubado  {5
-#Elixir total roubado  {6
-#Muros totais destruidos  {9
-#Quantidade de cvs destruidos  {10
-#Total de batalhas ganhas  {12
-#Total de defesas ganhas  {13
-#total de doacoes des de sempre  {14
-#total de exexir negro roubado  {16
-#total de ouro reconlhido do castelo do cla  { 21
-#Tem a conta ligada a uma rede social  {24
-#total de pontos feitos pelo cla 31
-#total de estrelas feitas na liga de clans  {33
-#Tem supercell id ativado 34
-#total de pontos feitos do battle pass 35
-
-
-
-
-#tags de todos os membros
-tags = []
-#cria uma lista com todas as tags
-for x in clan_dic['memberList']:
-    tag = x['tag']
-    tags.append(tag)
-for key, value in individual("#8Q0L2YGQ").items():
-    print(key)
-
-
-
-#print(json.dumps(individual("#8Q0L2YGQ"), indent=4))'''
