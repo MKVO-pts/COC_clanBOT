@@ -6,10 +6,8 @@ import time
 import json
 import re
 import os
-# Info
-'''
-Promenores sobre as funcoes importadas acima
-'''
+
+
 # para armazenar os membros em ficheiros json (precisa de update para trabaçlhar com diretorios)
 def store(objective, filename,indt):
     with open('{}{}'.format(filename,'.json'),'w') as f:
@@ -18,7 +16,7 @@ def store(objective, filename,indt):
 
 #cria um ficheiro para cada pessoa no cla
 def individual_profile_update():
-    os.chdir('C:\\Users\\Ricardo\\Code\\coc_bot\\realtime')
+    os.chdir('YOUR_DIR') # put the dir where you want the files to be stored
     for x in clan_dic['memberList']:
         #print(x) #toda a info antes de ser filtrada
         for key in x:
@@ -43,7 +41,7 @@ def lista_actual(): #lista com os membros atuais
     return newLista
 def lista_antiga():
     oldLista = []
-    os.chdir('C:\\Users\\Ricardo\\Code\\coc_bot\\realtime')
+    os.chdir('YOUR_DIR') # put the dir where you want the files to be stored
     for y in os.scandir():
         ex = str(y).replace('.json\'>','').replace('<DirEntry \'','')
         oldLista.append(ex)
@@ -62,7 +60,7 @@ def verify_main():
 
     for x in new:
         if old == new:
-            os.chdir('C:\\Users\\Ricardo\\Code\\coc_bot\\realtime')
+            os.chdir('YOUR_DIR') # put the dir where you want the files to be stored
             updater(x)
             print('Normal update')
         else:
@@ -70,14 +68,12 @@ def verify_main():
                 print(datetime.datetime.now().strftime('%X'),'  Removing the members that left...')
                 for y in old:
                     if y not in new:
-                        os.chdir('C:\\Users\\Ricardo\\Code\\coc_bot\\realtime')
+                        os.chdir('YOUR_DIR') # put the dir where you want the files to be stored
                         os.remove('{dir}/{file}{f_type}'.format(file=y,f_type='.json',dir='C:\\Users\\Ricardo\\Code\\coc_bot\\'))
                         print(y)
             elif len(old) < len(new):# adicionar
                 if x not in old:
-                    os.chdir('C:\\Users\\Ricardo\\Code\\coc_bot\\realtime')
-                    updater(x)
-                    os.chdir('C:\\Users\\Ricardo\\Code\\coc_bot\\bank')
+                    os.chdir('YOUR_DIR') # put the dir where you want the files to be stored
                     updater(x)
                     print(datetime.datetime.now().strftime('%X'), 'New profile added to the bank: ´{}´'.format(x))
             else:
@@ -86,7 +82,7 @@ def verify_main():
 
 #verifica se existem alteracoes e se houver atualiza o ficheiro
 def war_logs():
-    os.chdir('C:\\Users\\Ricardo\\Code\\coc_bot\\guerras') #muda o diretorio
+    os.chdir('YOUR_DIR') # put the dir where you want the files to be stored
     new = guerras_complet() #dicionario com os 'war_logs'
     #abre o feicheiro e verifica se existem diferencas
     with open('guerras.json') as f:
@@ -100,4 +96,4 @@ def war_logs():
             store(guerras_complet(),'guerras',1)
         else:
             print('Something went badddd!')
-verify_main()
+            
