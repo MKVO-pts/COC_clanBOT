@@ -1,4 +1,4 @@
-# COC_clanBOT 
+# COC_ClanBOT 
 
 ## Table of contents
 * [General info](#general-info)
