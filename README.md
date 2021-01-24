@@ -7,7 +7,8 @@
 * [Setup](#setup)
 
 ## General info
-Clash of Clans Bot to track your clan acctivity! 100 % Automaticly after configure it
+This BOT will keep your discord server updated everything that happened in your clan, and it's very simple to use!  
+Clash of Clans Bot to track your clan acctivity! 100 % Automaticly, after configure the ``config.py``file
 
 ## Features
 This project do:
@@ -21,8 +22,9 @@ This project use the following modules:
 * discord.py
 * threading
 * requestes
-* assync
+* asyncio
 * random
+* datatime
 * json
 * re
 
