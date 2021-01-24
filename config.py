@@ -1,19 +1,24 @@
+#The spaces that have " " should be srtings and the ones o have nothing should be int/numbers
 #scraper
-clanTag = '#2PUROCYCO'
-api__key = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImQ4ZDVhODFlLTYxNTYtNDk0MS1hMDM4LTViZTlhYWU0YWQ4NyIsImlhdCI6MTYxMTUyMjM0OCwic3ViIjoiZGV2ZWxvcGVyLzBkZDE4NTVjLTgzYmYtYTdhZi00MTg5LWVjMmE0ZTYyZWJiYSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjc3LjU0LjE5Ny43NyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.YYflNarqJOAM2pZOtFX7f4v2ermz3V_q93TMpTeGAidr6UOMifkIl1a8FkZU9etTI5YOT4W2UX8nzTkyTFZELg'
+clanTag = ""    #Put your clan tag
+api__key = ""   #put your clash of clans API Key 
 
-#func
-individual_member_dir = 'C:\\Users\\Ricardo\\Code\\coc_bot\\realtime'
-data_bank_dir = 'C:\\Users\\Ricardo\\Code\\coc_bot\\bank'
-main_dir = clan_file_dir = 'C:\\Users\\Ricardo\\Code\\coc_bot'
-war_logs_dir = 'C:\\Users\\Ricardo\\Code\\coc_bot\\guerras'
-war_now_dir = 'C:\\Users\\Ricardo\\Code\\coc_bot\\war'
-
-
-#discordBot
-discord_token = 'NzkyMTczODEzMDAwMzA2NzE4.X-Z3Wg.daZjSVuiAbQtQR6Fux9UHimKrJE'
-id_join_channel = 792170355556614158
-activity = 'Clash of CLans'
+#Diretories
+#ATTENCION!!! THE DIRETORIS HAVE TO BE ALL DIFERENT
+individual_member_dir = ""      #here you want 
+data_bank_dir = ""              #here there will be stored data about every member that joined the clan  
+main_dir = clan_file_dir = ""   #here will be the file whit your clan general info 
+war_logs_dir = ""               #here will be here the file whit your clan war historic 
+war_now_dir = ""                #here will be here  the present war info will be
+#exemple : 'C:\\Users\\Your_user\\Discordbot\\war'
 
 
+#DiscordBot
+#the bot should have Admistrador permissions 
+discord_token = ""                #your discord bot token
+id_join_channel =                 #put the id you want to recieve messages when someone join/leave the clan
+activity = "Clash of Clans"       #what you want to apear you bot is playing
 
+
+
+ 
