@@ -1,5 +1,5 @@
 #The spaces that have " " should be srtings and the ones o have nothing should be int/numbers
-#scraper
+#Scraper
 clanTag = ""    #Put your clan tag
 api__key = ""   #put your clash of clans API Key 
 
@@ -18,7 +18,3 @@ war_now_dir = ""                #here will be here  the present war info will be
 discord_token = ""                #your discord bot token
 id_join_channel =                 #put the id you want to recieve messages when someone join/leave the clan
 activity = "Clash of Clans"       #what you want to apear you bot is playing
-
-
-
- 
