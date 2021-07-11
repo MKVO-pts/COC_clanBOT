@@ -47,7 +47,7 @@ async def on_member_join(member):
 @bot.commands 
 async def commando(ctx, parametros1, parametros2):
     acao     #a acao em si
-    ctx.sen()
+    ctx.send()
 commando = commando sem o prefixo "!"
 """
 
@@ -69,12 +69,12 @@ async def teste(ctx):
     await ctx.send(embed=embedVar)'''
 
     #await ctx.send('Os parametros sao {}'.format(person))
-    #print('Person id: ',person)
-'''
+    '''
 @bot.command()
 async def help(ctx):
     await ctx.send('Commandos: ```\n !help - mostra esta mensagem \n !info_clan - mostra info basica sobre o cla \n !info nome_do_membro - envia info sobre o membro \n !rank - mostra a tabela de ranks de doacoes \n !envite -convida o bot para o teu servidor ```')
 '''
+    
 #Envia a info do membro que se escolher 
 @bot.command(brief=' -Mostra detalhes sobre o membro',description='Mostra informação sobre o membro caso ele esteja no cla, este comando usa-se da seguinte forma ```!info nome_no_clash```Se o nome do membro tiver espacos deve se usar ```!info "nome_no_clash " ```A informacao de cada membro é atualizada automaticamente de 5 em 5 minutos')
 async def info(ctx, pessoa):
@@ -163,11 +163,8 @@ async def unban(ctx, *, member):
             await ctx.send(f'Unbanned {user.mention}')
             return
 
-
-#webhook: https://discordapp.com/api/webhooks/793630040260608006/dT4q58De_RfSPIozr3NNmFsSOs0jwI4ml23a_MEnicZrgMEWZFcJD1xtb3x5HFbRKmhk
-
 '''
-# se um cimmando for mal executado 
+# se um commando for mal executado 
 @info.error
 async def info_error(ctx, error):
     if isinstance(error, commands.BadArgument):
@@ -177,9 +174,9 @@ async def info_error(ctx, error):
 
 
 
-
-#zonda de tasks
-
+##
+#Zonda de tasks
+## Tasks incluem loops e funcoes q sao executadas priodicamente
 @tasks.loop(seconds=120) #150s=2,3min
 async def member_control():
     await bot.wait_until_ready()
@@ -243,46 +240,10 @@ async def clan_info():
     info = clan_profile() #dcionario com info do cla 
     store(info, info['nome'], 1) #atualiza a info do cla 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    
+# To Run the Discord BOT
 client.loop.create_task(clan_info())
 client.loop.create_task(guerra_historico())
 client.loop.create_task(member_control())
