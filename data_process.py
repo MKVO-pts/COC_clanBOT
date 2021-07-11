@@ -207,43 +207,11 @@ def guerra_profile():
     }
     return profile_war
 
-
-
-'''
-atual = guerra_atual()
-
-print(type(atual))
-
-for key,value in atual.items():
-    print(key)
-#print(json.dumps(atual,indent=1))
-''''''Keys:
-state- important
-teamSize (tamanho)
-preparationStartTime (?inutil?)
-startTime (?importante?)
-endTime (?importante?)
-clan - nao muito
-opponent -important
-'''
-
-
-
-
-
-
-
-
-
-#print(json.dumps(total_guerras, indent=2))
 '''
 Deste ficheiro aproveitamos o Individual que
 - 'guerras_complet()' -todo o historico de guerras
 - clan_profile() - info basica sobre o cla 
 - prefil_individual(tag) -info promenorizada sobre cada membro do cla 
-'''
-#for key, value in individual("#8Q0L2YGQ").items():
-'''
 
 ISTO E O INTRESSANTE QUE SE CONSEGUE OBTER ATRAVEZ DA ANALISE DAS ACHIVEMENTS:
 #Total de obstaculos rmovidos  {3
@@ -263,8 +231,6 @@ ISTO E O INTRESSANTE QUE SE CONSEGUE OBTER ATRAVEZ DA ANALISE DAS ACHIVEMENTS:
 #total de pontos feitos do battle pass 35
 
 
-
-
 #tags de todos os membros
 tags = []
 #cria uma lista com todas as tags
@@ -273,12 +239,7 @@ for x in clan_dic['memberList']:
     tags.append(tag)
 for key, value in individual("#8Q0L2YGQ").items():
     print(key)
-
-
-
-#print(json.dumps(individual("#8Q0L2YGQ"), indent=4))'''
-
-
+print(json.dumps(individual("#8Q0L2YGQ"), indent=4))'''
 
 #FUNCTIONS
 # para armazenar os membros em ficheiros json (precisa de update para trabaçlhar com diretorios)
