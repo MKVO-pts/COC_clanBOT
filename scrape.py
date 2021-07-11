@@ -3,29 +3,9 @@ import re
 import json
 import random
 import config
+#INFORMATION
 '''
-tot al importantes 
-
-
-# autorizacao, api key
-headers ={
-    'Accept': 'application/json',
-    'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjEwYTgyZTZhLTVhNTItNGZiMi05MDdiLWZmOTlkNzE0MTllNyIsImlhdCI6MTYwNjE1NTA1OSwic3ViIjoiZGV2ZWxvcGVyLzI0YmYyOTNkLTZiMzktOTI0ZC1iN2FkLTllNWRhNGZiMzUyNyIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjc3LjU0LjE5Ny43NyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.0SshuczcOfzP2TcyaeOzl5tpE6H26jQXRDHhaXcLVGcS0xHrYEKe8qA0LDtI8Q0Vl9ixP38h_nS49BAlE9YLbA'
-} 
-
-#realiza o pedido de informacao
-response = requests.get("https://api.clashofclans.com/v1/clans/%232PUROCYCO",headers=headers) #envia um pedido
-user_json = response.json() #passa para json
-
-#transforma a info de json para dicionario(armazenada e mais facil de se interagir)
-dicionario = dict(user_json)
-dict_org = json.dumps(dicionario, indent=5) #melhora a intrepretação do dict
-
-#Info sobre o dicionario criado / estado de organização
-#a indo entre [xxx] representa a "key no dicionario", vai ser importante porque vai ser como vamos usar os "valores" com o dicionario
-'''
-'''
-dicionario tem 20 pares de key,value 
+O .json recebito tem 20 pares de key,value:
 1  [tag] tag do cla
 2  [name] nome do cla
 3  [type] convite, aberto ...
@@ -47,7 +27,7 @@ dicionario tem 20 pares de key,value
 19 [memberList] Lista com informacao sobre todos os membros 
 20 [labels] ???3 quadrados que definem o cla ????
 
-Metodos relativos ao individul 
+Metodos relativos ao individual(cada membro):
 [tag]
 [name]
 [townHallLevel]
@@ -132,24 +112,3 @@ def guerra_atual():
     war_json = acess.json()
     dicionario = dict(war_json)
     return dicionario
-#algo = requests.get('https://api.clashofclans.com/v1/clans/{}/currentwar'.format(trans_tag),headers=verification).json()
-#print(json.dumps(algo, indent=2))
-#print(individual('#2QC202JC2'))
-print(guerra_logs())
-print(guerra_atual())
-print(guerra_logs())
-print(guerra_atual())
-'''
-for key,value in guerra_atual().items():
-    print(key)
-    if key == 'state':
-        print('------------')
-        print(value)
-        print('-------------')
-
-for key, value in dicionario.items():
-    print(key, ' : ', value)
-    if key == "memberList":
-        for key, value in dicionario[memberList]:
-            print(key,' : ', value)
-'''
